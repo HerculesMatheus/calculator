@@ -1,0 +1,6 @@
+.calculator__buttons--mobile {
+  display: grid;
+  grid-template: "a a a a";
+}
+
+/*# sourceMappingURL=basicCalculator.css.map */
