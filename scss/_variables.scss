@@ -1,0 +1,46 @@
+$font-sizes: (
+  title-mobile: 32px,
+  title-desktop: 40px,
+  button-text-mobile: 24px,
+  button-text-desktop: 48px,
+  options-mobile: 16px,
+  options-desktop: 24px,
+  visor-mobile: 64px,
+  visor-desktop: 96px,
+);
+
+$light-theme-colors: (
+  bg: #f9f9f9,
+  txt: #212121,
+  primary: #d6d6d6,
+  secondary: #e8e8e8,
+  tertiary: #212121,
+  first-button-color: #e26c2d,
+  last-button-color: #2dafe2,
+  alt: #f9f9f9,
+  drop-shadow: #808080,
+);
+
+$dark-theme-colors: (
+  bg: #131313,
+  txt: #dedede,
+  primary: #363636,
+  secondary: #242424,
+  tertiary: #dedede,
+  first-button-color: #e26c2d,
+  last-button-color: #2dafe2,
+  alt: #131313,
+  drop-shadow: #343434,
+);
+
+:root {
+  @each $name, $value in $light-theme-colors {
+    --#{$name}: #{$value};
+  }
+}
+
+.dark-mode {
+  @each $name, $value in $dark-theme-colors {
+    --#{$name}: #{$value};
+  }
+}

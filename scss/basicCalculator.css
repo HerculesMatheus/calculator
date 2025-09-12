@@ -376,6 +376,7 @@
   border: none;
   background-color: var(--secondary);
   color: var(--txt);
+  cursor: pointer;
 }
 .calculator__button--desktop svg {
   transform: scale(1.5);
@@ -468,6 +469,4 @@ body {
   .calculator--desktop {
     display: none;
   }
-}
-
-/*# sourceMappingURL=basicCalculator.css.map */
+}/*# sourceMappingURL=basicCalculator.css.map */

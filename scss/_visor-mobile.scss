@@ -1,0 +1,15 @@
+@import "variables";
+
+@media only screen and (max-width: 768px) {
+  .calculator__visor--mobile {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-shrink: 0;
+    width: 100%;
+    height: 90px;
+    font-size: map-get($map: $font-sizes, $key: visor-mobile);
+    background-color: var(--alt);
+    color: var(--txt);
+  }
+}

@@ -21,51 +21,517 @@
   <body>
     <header class="header header--mobile">
       <nav class="navbar navbar--mobile">
-        <h1 class="navbar__title--mobile">Caculadora</h1>
-        <img
-          src="../assets/more-vertical.svg"
-          alt="menu"
-          class="navbar__icon--mobile"
-        />
+        <h1 class="navbar__title--mobile">Calculadora</h1>
+        <button class="navbar__icon--mobile">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z"
+              stroke="black"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z"
+              stroke="black"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z"
+              stroke="black"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <ul class="navbar__options--mobile">
+          <li><button class="clean-history">Limpar Histórico</button></li>
+          <li><button class="toggle-theme">Alterar Tema</button></li>
+        </ul>
       </nav>
     </header>
     <main class="main">
       <section class="calculator calculator--mobile">
-        <div class="calculator__visor--mobile"></div>
+        <div id="visor" class="calculator__visor--mobile">0</div>
         <div class="calculator__buttons--mobile">
-          <button id="ac">AC</button>
-          <button id="history">
-            <img src="../assets/clock.svg" alt="Histórico" />
+          <button
+            id="ac"
+            class="calculator__button--mobile calculator__button--mobile--clean"
+          >
+            AC
           </button>
-          <button id="percent">
-            <img src="../assets/percent.svg" alt="Porcentagem" />
+          <button id="history" class="calculator__button--mobile">
+            <svg
+              width="30"
+              height="31"
+              viewBox="0 0 30 31"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15.2308 28C22.0281 28 27.5385 22.4897 27.5385 15.6923C27.5385 8.89495 22.0281 3.38461 15.2308 3.38461C8.43341 3.38461 2.92307 8.89495 2.92307 15.6923C2.92307 22.4897 8.43341 28 15.2308 28Z"
+                stroke="#212121"
+                stroke-width="2.46154"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M15.2308 8.30768V15.6923L20.1539 18.1538"
+                stroke="#212121"
+                stroke-width="2.46154"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
           </button>
-          <button id="divide">
-            <img src="../assets/divide-circle.svg" alt="Divisão" />
+          <button id="percent" class="calculator__button--mobile">
+            <svg
+              width="30"
+              height="31"
+              viewBox="0 0 30 31"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M23.3846 7.0769L6.15384 24.3077"
+                stroke="#212121"
+                stroke-width="2.46154"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M7.99999 12C9.69933 12 11.0769 10.6224 11.0769 8.92308C11.0769 7.22375 9.69933 5.84616 7.99999 5.84616C6.30065 5.84616 4.92307 7.22375 4.92307 8.92308C4.92307 10.6224 6.30065 12 7.99999 12Z"
+                stroke="#212121"
+                stroke-width="2.46154"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M21.5385 25.5385C23.2378 25.5385 24.6154 24.1609 24.6154 22.4615C24.6154 20.7622 23.2378 19.3846 21.5385 19.3846C19.8391 19.3846 18.4615 20.7622 18.4615 22.4615C18.4615 24.1609 19.8391 25.5385 21.5385 25.5385Z"
+                stroke="#212121"
+                stroke-width="2.46154"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
           </button>
-          <button value="7">7</button> <button value="8">8</button>
-          <button value="9">9</button>
-          <button><img src="../assets/x.svg" alt="Multiplicar" /></button>
-          <button value="4">4</button> <button value="5">5</button>
-          <button value="6">6</button>
-          <button id="minus">
-            <img src="../assets/minus.svg" alt="Subtração" />
+          <button id="divide" class="calculator__button--mobile">
+            <svg
+              width="31"
+              height="31"
+              viewBox="0 0 31 31"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.69232 15.6923H23.9231"
+                stroke="#212121"
+                stroke-width="2.46154"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <circle cx="15.3077" cy="23.0769" r="2.46154" fill="#212121" />
+              <circle cx="15.3077" cy="8.3077" r="2.46154" fill="#212121" />
+            </svg>
           </button>
-          <button value="1">1</button> <button value="2">2</button>
-          <button value="3">3</button>
-          <button id="plus"><img src="../assets/plus.svg" alt="Soma" /></button>
-          <button value="0">0</button> <button value=",">,</button>
-          <button id="delete">
-            <img src="../assets/delete.svg" alt="Deletar" />
+          <button id="7" class="calculator__button--mobile">7</button>
+          <button id="8" class="calculator__button--mobile">8</button>
+          <button id="9" class="calculator__button--mobile">9</button>
+          <button class="calculator__button--mobile">
+            <svg
+              width="31"
+              height="31"
+              viewBox="0 0 31 31"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M22.6923 7.92307L7.92307 22.6923"
+                stroke="#212121"
+                stroke-width="2.46154"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M7.92307 7.92307L22.6923 22.6923"
+                stroke="#212121"
+                stroke-width="2.46154"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
           </button>
-          <button id="equal">
-            <img src="../assets/equal.svg" alt="Igual a" />
+          <button id="4" class="calculator__button--mobile">4</button>
+          <button id="5" class="calculator__button--mobile">5</button>
+          <button id="6" class="calculator__button--mobile">6</button>
+          <button id="minus" class="calculator__button--mobile">
+            <svg
+              width="31"
+              height="30"
+              viewBox="0 0 31 30"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.69232 14.923H23.9231"
+                stroke="#212121"
+                stroke-width="2.46154"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <button id="1" class="calculator__button--mobile">1</button>
+          <button id="2" class="calculator__button--mobile">2</button>
+          <button id="3" class="calculator__button--mobile">3</button>
+          <button id="plus" class="calculator__button--mobile">
+            <svg
+              width="31"
+              height="30"
+              viewBox="0 0 31 30"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15.3077 6.15381V23.3846"
+                stroke="#212121"
+                stroke-width="2.46154"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M6.69232 14.7692H23.9231"
+                stroke="#212121"
+                stroke-width="2.46154"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <button id="0" class="calculator__button--mobile">0</button>
+          <button id="," class="calculator__button--mobile">,</button>
+          <button id="delete" class="calculator__button--mobile">
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 30 30"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_2_88)">
+                <path
+                  d="M25.8462 5.30771H9.84616L1.23077 15.1539L9.84616 25H25.8462C26.499 25 27.1251 24.7407 27.5867 24.279C28.0484 23.8174 28.3077 23.1913 28.3077 22.5385V7.76925C28.3077 7.11641 28.0484 6.4903 27.5867 6.02868C27.1251 5.56705 26.499 5.30771 25.8462 5.30771Z"
+                  stroke="#212121"
+                  stroke-width="2.46154"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M22.1538 11.4615L14.7692 18.8461"
+                  stroke="#212121"
+                  stroke-width="2.46154"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M14.7692 11.4615L22.1538 18.8461"
+                  stroke="#212121"
+                  stroke-width="2.46154"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_2_88">
+                  <rect
+                    width="29.5385"
+                    height="29.5385"
+                    fill="white"
+                    transform="translate(0 0.384613)"
+                  />
+                </clipPath>
+              </defs>
+            </svg>
+          </button>
+          <button
+            id="equal"
+            class="calculator__button--mobile calculator__button--mobile--equals"
+          >
+            <svg
+              width="31"
+              height="30"
+              viewBox="0 0 31 30"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.69232 17.6154H23.9231"
+                stroke="#212121"
+                stroke-width="2.46154"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M6.69232 12.6923H23.9231"
+                stroke="#212121"
+                stroke-width="2.46154"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
           </button>
         </div>
       </section>
-      <aside class="sidebar-desktop"></aside>
-      <section class="calculator-desktop"></section>
+      <section class="calculator calculator--desktop">
+        <aside class="sidebar sidebar--desktop">
+          <h1 class="sidebar__title--desktop">Calculadora</h1>
+          <ul class="sidebar__options--desktop">
+            <li><button class="clean-history">Limpar Histórico</button></li>
+            <li><button class="toggle-theme">Alterar Tema</button></li>
+          </ul>
+        </aside>
+        <div class="calculator__body--desktop">
+          <div id="visor" class="calculator__visor--desktop">0</div>
+          <div class="calculator__buttons--desktop">
+            <button
+              id="ac"
+              class="calculator__button--desktop calculator__button--desktop--clean"
+            >
+              AC
+            </button>
+            <button id="history" class="calculator__button--desktop">
+              <svg
+                width="30"
+                height="31"
+                viewBox="0 0 30 31"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15.2308 28C22.0281 28 27.5385 22.4897 27.5385 15.6923C27.5385 8.89495 22.0281 3.38461 15.2308 3.38461C8.43341 3.38461 2.92307 8.89495 2.92307 15.6923C2.92307 22.4897 8.43341 28 15.2308 28Z"
+                  stroke="#212121"
+                  stroke-width="2.46154"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M15.2308 8.30768V15.6923L20.1539 18.1538"
+                  stroke="#212121"
+                  stroke-width="2.46154"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <button id="percent" class="calculator__button--desktop">
+              <svg
+                width="30"
+                height="31"
+                viewBox="0 0 30 31"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M23.3846 7.0769L6.15384 24.3077"
+                  stroke="#212121"
+                  stroke-width="2.46154"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M7.99999 12C9.69933 12 11.0769 10.6224 11.0769 8.92308C11.0769 7.22375 9.69933 5.84616 7.99999 5.84616C6.30065 5.84616 4.92307 7.22375 4.92307 8.92308C4.92307 10.6224 6.30065 12 7.99999 12Z"
+                  stroke="#212121"
+                  stroke-width="2.46154"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M21.5385 25.5385C23.2378 25.5385 24.6154 24.1609 24.6154 22.4615C24.6154 20.7622 23.2378 19.3846 21.5385 19.3846C19.8391 19.3846 18.4615 20.7622 18.4615 22.4615C18.4615 24.1609 19.8391 25.5385 21.5385 25.5385Z"
+                  stroke="#212121"
+                  stroke-width="2.46154"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <button id="divide" class="calculator__button--desktop">
+              <svg
+                width="31"
+                height="31"
+                viewBox="0 0 31 31"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.69232 15.6923H23.9231"
+                  stroke="#212121"
+                  stroke-width="2.46154"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <circle cx="15.3077" cy="23.0769" r="2.46154" fill="#212121" />
+                <circle cx="15.3077" cy="8.3077" r="2.46154" fill="#212121" />
+              </svg>
+            </button>
+            <button id="7" class="calculator__button--desktop">7</button>
+            <button id="8" class="calculator__button--desktop">8</button>
+            <button id="9" class="calculator__button--desktop">9</button>
+            <button class="calculator__button--desktop">
+              <svg
+                width="31"
+                height="31"
+                viewBox="0 0 31 31"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M22.6923 7.92307L7.92307 22.6923"
+                  stroke="#212121"
+                  stroke-width="2.46154"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M7.92307 7.92307L22.6923 22.6923"
+                  stroke="#212121"
+                  stroke-width="2.46154"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <button id="4" class="calculator__button--desktop">4</button>
+            <button id="5" class="calculator__button--desktop">5</button>
+            <button id="6" class="calculator__button--desktop">6</button>
+            <button id="minus" class="calculator__button--desktop">
+              <svg
+                width="31"
+                height="30"
+                viewBox="0 0 31 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.69232 14.923H23.9231"
+                  stroke="#212121"
+                  stroke-width="2.46154"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <button id="1" class="calculator__button--desktop">1</button>
+            <button id="2" class="calculator__button--desktop">2</button>
+            <button id="3" class="calculator__button--desktop">3</button>
+            <button id="plus" class="calculator__button--desktop">
+              <svg
+                width="31"
+                height="30"
+                viewBox="0 0 31 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15.3077 6.15381V23.3846"
+                  stroke="#212121"
+                  stroke-width="2.46154"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M6.69232 14.7692H23.9231"
+                  stroke="#212121"
+                  stroke-width="2.46154"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <button id="0" class="calculator__button--desktop">0</button>
+            <button id="," class="calculator__button--desktop">,</button>
+            <button id="delete" class="calculator__button--desktop">
+              <svg
+                width="30"
+                height="30"
+                viewBox="0 0 30 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_2_88)">
+                  <path
+                    d="M25.8462 5.30771H9.84616L1.23077 15.1539L9.84616 25H25.8462C26.499 25 27.1251 24.7407 27.5867 24.279C28.0484 23.8174 28.3077 23.1913 28.3077 22.5385V7.76925C28.3077 7.11641 28.0484 6.4903 27.5867 6.02868C27.1251 5.56705 26.499 5.30771 25.8462 5.30771Z"
+                    stroke="#212121"
+                    stroke-width="2.46154"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M22.1538 11.4615L14.7692 18.8461"
+                    stroke="#212121"
+                    stroke-width="2.46154"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M14.7692 11.4615L22.1538 18.8461"
+                    stroke="#212121"
+                    stroke-width="2.46154"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_2_88">
+                    <rect
+                      width="29.5385"
+                      height="29.5385"
+                      fill="white"
+                      transform="translate(0 0.384613)"
+                    />
+                  </clipPath>
+                </defs>
+              </svg>
+            </button>
+            <button
+              id="equal"
+              class="calculator__button--desktop calculator__button--desktop--equals"
+            >
+              <svg
+                width="31"
+                height="30"
+                viewBox="0 0 31 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.69232 17.6154H23.9231"
+                  stroke="#212121"
+                  stroke-width="2.46154"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M6.69232 12.6923H23.9231"
+                  stroke="#212121"
+                  stroke-width="2.46154"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
     </main>
-    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="../scripts/main.js" type="module"></script>
   </body>
 </html>
