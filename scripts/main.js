@@ -1,5 +1,6 @@
 import { applySavedTheme, toggleTheme } from "./toggleTheme.js";
 import toggleMenu from "./toggleMobileMenu.js";
+import calc from "./calculator.js";
 
 applySavedTheme();
 
@@ -14,3 +15,7 @@ document
   .addEventListener("click", () => {
     toggleMenu();
   });
+
+document.addEventListener("DOMContentLoaded", () => {
+  calc();
+});

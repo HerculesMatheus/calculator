@@ -54,22 +54,27 @@
           </svg>
         </button>
         <ul class="navbar__options--mobile">
-          <li><button class="clean-history">Limpar Histórico</button></li>
           <li><button class="toggle-theme">Alterar Tema</button></li>
         </ul>
       </nav>
     </header>
     <main class="main">
       <section class="calculator calculator--mobile">
-        <div id="visor" class="calculator__visor--mobile">0</div>
+        <div id="visor" class="calculator__visor--mobile">
+          <div class="visor__operator"></div>
+          <div class="visor__value">0</div>
+        </div>
         <div class="calculator__buttons--mobile">
           <button
             id="ac"
-            class="calculator__button--mobile calculator__button--mobile--clean"
+            class="calculator-button calculator__button--mobile calculator__button--mobile--clean"
           >
             AC
           </button>
-          <button id="history" class="calculator__button--mobile">
+          <button
+            id="history"
+            class="calculator-button calculator__button--mobile"
+          >
             <svg
               width="30"
               height="31"
@@ -93,7 +98,10 @@
               />
             </svg>
           </button>
-          <button id="percent" class="calculator__button--mobile">
+          <button
+            id="percent"
+            class="calculator-button calculator__button--mobile"
+          >
             <svg
               width="30"
               height="31"
@@ -124,7 +132,10 @@
               />
             </svg>
           </button>
-          <button id="divide" class="calculator__button--mobile">
+          <button
+            id="divide"
+            class="calculator-button calculator__button--mobile"
+          >
             <svg
               width="31"
               height="31"
@@ -143,10 +154,28 @@
               <circle cx="15.3077" cy="8.3077" r="2.46154" fill="#212121" />
             </svg>
           </button>
-          <button id="7" class="calculator__button--mobile">7</button>
-          <button id="8" class="calculator__button--mobile">8</button>
-          <button id="9" class="calculator__button--mobile">9</button>
-          <button class="calculator__button--mobile">
+          <button
+            value="7"
+            class="calculator-button calculator__button--mobile"
+          >
+            7
+          </button>
+          <button
+            value="8"
+            class="calculator-button calculator__button--mobile"
+          >
+            8
+          </button>
+          <button
+            value="9"
+            class="calculator-button calculator__button--mobile"
+          >
+            9
+          </button>
+          <button
+            id="times"
+            class="calculator-button calculator__button--mobile"
+          >
             <svg
               width="31"
               height="31"
@@ -170,10 +199,28 @@
               />
             </svg>
           </button>
-          <button id="4" class="calculator__button--mobile">4</button>
-          <button id="5" class="calculator__button--mobile">5</button>
-          <button id="6" class="calculator__button--mobile">6</button>
-          <button id="minus" class="calculator__button--mobile">
+          <button
+            value="4"
+            class="calculator-button calculator__button--mobile"
+          >
+            4
+          </button>
+          <button
+            value="5"
+            class="calculator-button calculator__button--mobile"
+          >
+            5
+          </button>
+          <button
+            value="6"
+            class="calculator-button calculator__button--mobile"
+          >
+            6
+          </button>
+          <button
+            id="minus"
+            class="calculator-button calculator__button--mobile"
+          >
             <svg
               width="31"
               height="30"
@@ -190,10 +237,28 @@
               />
             </svg>
           </button>
-          <button id="1" class="calculator__button--mobile">1</button>
-          <button id="2" class="calculator__button--mobile">2</button>
-          <button id="3" class="calculator__button--mobile">3</button>
-          <button id="plus" class="calculator__button--mobile">
+          <button
+            value="1"
+            class="calculator-button calculator__button--mobile"
+          >
+            1
+          </button>
+          <button
+            value="2"
+            class="calculator-button calculator__button--mobile"
+          >
+            2
+          </button>
+          <button
+            value="3"
+            class="calculator-button calculator__button--mobile"
+          >
+            3
+          </button>
+          <button
+            id="plus"
+            class="calculator-button calculator__button--mobile"
+          >
             <svg
               width="31"
               height="30"
@@ -217,9 +282,22 @@
               />
             </svg>
           </button>
-          <button id="0" class="calculator__button--mobile">0</button>
-          <button id="," class="calculator__button--mobile">,</button>
-          <button id="delete" class="calculator__button--mobile">
+          <button
+            value="0"
+            class="calculator-button calculator__button--mobile"
+          >
+            0
+          </button>
+          <button
+            value="."
+            class="calculator-button calculator__button--mobile"
+          >
+            .
+          </button>
+          <button
+            id="delete"
+            class="calculator-button calculator__button--mobile"
+          >
             <svg
               width="30"
               height="30"
@@ -264,7 +342,7 @@
           </button>
           <button
             id="equal"
-            class="calculator__button--mobile calculator__button--mobile--equals"
+            class="calculator-button calculator__button--mobile calculator__button--mobile--equals"
           >
             <svg
               width="31"
@@ -295,20 +373,25 @@
         <aside class="sidebar sidebar--desktop">
           <h1 class="sidebar__title--desktop">Calculadora</h1>
           <ul class="sidebar__options--desktop">
-            <li><button class="clean-history">Limpar Histórico</button></li>
             <li><button class="toggle-theme">Alterar Tema</button></li>
           </ul>
         </aside>
         <div class="calculator__body--desktop">
-          <div id="visor" class="calculator__visor--desktop">0</div>
+          <div id="visor" class="calculator__visor--desktop">
+            <div class="visor__operator">&nbsp;</div>
+            <div class="visor__value">0</div>
+          </div>
           <div class="calculator__buttons--desktop">
             <button
               id="ac"
-              class="calculator__button--desktop calculator__button--desktop--clean"
+              class="calculator-button calculator__button--desktop calculator__button--desktop--clean"
             >
               AC
             </button>
-            <button id="history" class="calculator__button--desktop">
+            <button
+              id="history"
+              class="calculator-button calculator__button--desktop"
+            >
               <svg
                 width="30"
                 height="31"
@@ -332,7 +415,10 @@
                 />
               </svg>
             </button>
-            <button id="percent" class="calculator__button--desktop">
+            <button
+              id="percent"
+              class="calculator-button calculator__button--desktop"
+            >
               <svg
                 width="30"
                 height="31"
@@ -363,7 +449,10 @@
                 />
               </svg>
             </button>
-            <button id="divide" class="calculator__button--desktop">
+            <button
+              id="divide"
+              class="calculator-button calculator__button--desktop"
+            >
               <svg
                 width="31"
                 height="31"
@@ -382,10 +471,28 @@
                 <circle cx="15.3077" cy="8.3077" r="2.46154" fill="#212121" />
               </svg>
             </button>
-            <button id="7" class="calculator__button--desktop">7</button>
-            <button id="8" class="calculator__button--desktop">8</button>
-            <button id="9" class="calculator__button--desktop">9</button>
-            <button class="calculator__button--desktop">
+            <button
+              value="7"
+              class="calculator-button calculator__button--desktop"
+            >
+              7
+            </button>
+            <button
+              value="8"
+              class="calculator-button calculator__button--desktop"
+            >
+              8
+            </button>
+            <button
+              value="9"
+              class="calculator-button calculator__button--desktop"
+            >
+              9
+            </button>
+            <button
+              id="times"
+              class="calculator-button calculator__button--desktop"
+            >
               <svg
                 width="31"
                 height="31"
@@ -409,10 +516,28 @@
                 />
               </svg>
             </button>
-            <button id="4" class="calculator__button--desktop">4</button>
-            <button id="5" class="calculator__button--desktop">5</button>
-            <button id="6" class="calculator__button--desktop">6</button>
-            <button id="minus" class="calculator__button--desktop">
+            <button
+              value="4"
+              class="calculator-button calculator__button--desktop"
+            >
+              4
+            </button>
+            <button
+              value="5"
+              class="calculator-button calculator__button--desktop"
+            >
+              5
+            </button>
+            <button
+              value="6"
+              class="calculator-button calculator__button--desktop"
+            >
+              6
+            </button>
+            <button
+              id="minus"
+              class="calculator-button calculator__button--desktop"
+            >
               <svg
                 width="31"
                 height="30"
@@ -429,10 +554,28 @@
                 />
               </svg>
             </button>
-            <button id="1" class="calculator__button--desktop">1</button>
-            <button id="2" class="calculator__button--desktop">2</button>
-            <button id="3" class="calculator__button--desktop">3</button>
-            <button id="plus" class="calculator__button--desktop">
+            <button
+              value="1"
+              class="calculator-button calculator__button--desktop"
+            >
+              1
+            </button>
+            <button
+              value="2"
+              class="calculator-button calculator__button--desktop"
+            >
+              2
+            </button>
+            <button
+              value="3"
+              class="calculator-button calculator__button--desktop"
+            >
+              3
+            </button>
+            <button
+              id="plus"
+              class="calculator-button calculator__button--desktop"
+            >
               <svg
                 width="31"
                 height="30"
@@ -456,9 +599,22 @@
                 />
               </svg>
             </button>
-            <button id="0" class="calculator__button--desktop">0</button>
-            <button id="," class="calculator__button--desktop">,</button>
-            <button id="delete" class="calculator__button--desktop">
+            <button
+              value="0"
+              class="calculator-button calculator__button--desktop"
+            >
+              0
+            </button>
+            <button
+              value="."
+              class="calculator-button calculator__button--desktop"
+            >
+              .
+            </button>
+            <button
+              id="delete"
+              class="calculator-button calculator__button--desktop"
+            >
               <svg
                 width="30"
                 height="30"
@@ -503,7 +659,7 @@
             </button>
             <button
               id="equal"
-              class="calculator__button--desktop calculator__button--desktop--equals"
+              class="calculator-button calculator__button--desktop calculator__button--desktop--equals"
             >
               <svg
                 width="31"

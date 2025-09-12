@@ -1,16 +1,31 @@
 .calculator__visor--desktop {
-  display: flex;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
   justify-content: flex-end;
+  justify-items: end;
   align-items: flex-end;
   flex-shrink: 0;
   width: 75%;
+  max-width: 1080px;
   height: 100px;
   margin-top: 40px;
-  padding: 0 10px;
+  padding: 0 10px 15px 0;
   border-radius: 16px;
   font-size: map-get($map: $font-sizes, $key: visor-desktop);
   background-color: var(--alt);
   color: var(--txt);
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scrollbar-width: none;
+
+  div.visor__operator {
+    font-size: map-get($map: $font-sizes, $key: visor-operator-desktop);
+  }
+}
+
+.calculator__visor--desktop::-webkit-scrollbar {
+  display: none;
 }
 
 @media only screen and (max-width: 1024px) {

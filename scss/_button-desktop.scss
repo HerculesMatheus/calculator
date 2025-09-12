@@ -5,6 +5,7 @@
   grid-template-rows: repeat(5, 1fr);
   grid-template-columns: repeat(4, 1fr);
   width: 80%;
+  max-width: 1080px;
   padding: 20px 10px 50px 10px;
   border-radius: 64px 64px 0 0;
   gap: 15px;
@@ -33,6 +34,10 @@
 
     path {
       stroke: var(--txt);
+    }
+
+    circle {
+      fill: var(--tertiary);
     }
   }
 

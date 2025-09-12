@@ -137,15 +137,31 @@
 
 @media only screen and (max-width: 768px) {
   .calculator__visor--mobile {
-    display: flex;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
     justify-content: flex-end;
+    justify-items: end;
     align-items: flex-end;
     flex-shrink: 0;
     width: 100%;
+    max-width: 100%;
     height: 90px;
-    font-size: 64px;
+    padding: 0 10px 15px 0;
+    font-size: 32px;
     background-color: var(--alt);
     color: var(--txt);
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .calculator__visor--mobile div.visor__operator {
+    font-size: 18px;
+  }
+  .calculator__visor--mobile::-webkit-scrollbar {
+    display: none;
   }
 }
 :root {
@@ -200,6 +216,9 @@
   }
   .calculator__button--mobile svg path {
     stroke: var(--txt);
+  }
+  .calculator__button--mobile svg circle {
+    fill: var(--tertiary);
   }
   .calculator__button--mobile:active {
     background-color: var(--primary);
@@ -307,18 +326,32 @@
   }
 }
 .calculator__visor--desktop {
-  display: flex;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
   justify-content: flex-end;
+  justify-items: end;
   align-items: flex-end;
   flex-shrink: 0;
   width: 75%;
+  max-width: 1080px;
   height: 100px;
   margin-top: 40px;
-  padding: 0 10px;
+  padding: 0 10px 15px 0;
   border-radius: 16px;
-  font-size: 96px;
+  font-size: 48px;
   background-color: var(--alt);
   color: var(--txt);
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scrollbar-width: none;
+}
+.calculator__visor--desktop div.visor__operator {
+  font-size: 24px;
+}
+
+.calculator__visor--desktop::-webkit-scrollbar {
+  display: none;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -355,6 +388,7 @@
   grid-template-rows: repeat(5, 1fr);
   grid-template-columns: repeat(4, 1fr);
   width: 80%;
+  max-width: 1080px;
   padding: 20px 10px 50px 10px;
   border-radius: 64px 64px 0 0;
   gap: 15px;
@@ -376,12 +410,16 @@
   border: none;
   background-color: var(--secondary);
   color: var(--txt);
+  cursor: pointer;
 }
 .calculator__button--desktop svg {
   transform: scale(1.5);
 }
 .calculator__button--desktop svg path {
   stroke: var(--txt);
+}
+.calculator__button--desktop svg circle {
+  fill: var(--tertiary);
 }
 .calculator__button--desktop:active {
   background-color: var(--primary);

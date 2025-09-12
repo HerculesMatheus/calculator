@@ -31,6 +31,10 @@
       stroke: var(--txt);
     }
 
+    svg circle {
+      fill: var(--tertiary);
+    }
+
     &:active {
       background-color: var(--primary);
       transform: scale(0.9);
