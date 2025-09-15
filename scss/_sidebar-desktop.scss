@@ -1,0 +1,60 @@
+@import "variables";
+
+.sidebar--desktop {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px 0;
+  height: 100%;
+  align-items: center;
+  color: var(--txt);
+  background: var(--secondary);
+
+  h1 {
+    font-size: map-get($map: $font-sizes, $key: title-desktop);
+    font-weight: bold;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: map-get($map: $font-sizes, $key: options-desktop);
+    font-weight: 400;
+
+    button {
+      padding: 10px;
+      border-radius: 16px;
+      background-color: transparent;
+      border: none;
+      font-family: inherit;
+      font-size: inherit;
+      color: inherit;
+
+      &:active {
+        background-color: #808080;
+        transform: scale(0.95);
+      }
+    }
+
+    li {
+      font-family: inherit;
+      font-size: inherit;
+      margin: 10px;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .sidebar--desktop {
+    h1 {
+      transform: scale(0.7);
+    }
+  }
+}
