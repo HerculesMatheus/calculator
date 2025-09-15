@@ -2,8 +2,7 @@ var currentValue = "";
 var firstValue = "";
 var secondValue = "";
 var operator = "";
-const operadores = ["plus", "minus", "times", "divide"];
-const hist = new Array(5);
+const operators = ["plus", "minus", "times", "divide", "percent"];
 
 function calc() {
   const buttons = document.querySelectorAll(".calculator-button");
@@ -17,7 +16,7 @@ function calc() {
         return;
       }
 
-      if (operadores.includes(btn.id)) {
+      if (operators.includes(btn.id)) {
         setOperator(btn);
         updateVisorOperator();
         return;
@@ -31,20 +30,29 @@ function calc() {
         backspace();
       }
 
-      updateVisorValue(btn);
+      if (btn.id === "pi") {
+        pi();
+      }
+
+      validateValue(btn);
     });
   });
 }
 
-function updateVisorValue(btn) {
+function updateVisorValue() {
   const visorValue = document.querySelectorAll(".visor__value");
+  visorValue.forEach((v) => (v.innerText = currentValue || "0"));
+}
+
+function validateValue(btn) {
   const char = btn.value;
 
   if (!char) return;
   if (char === "." && currentValue.includes(".")) return;
   if (currentValue.length >= 17) return;
   currentValue += char;
-  visorValue.forEach((v) => (v.innerText = currentValue));
+
+  updateVisorValue();
 }
 
 function updateVisorOperator() {
@@ -54,13 +62,20 @@ function updateVisorOperator() {
 }
 
 function setOperator(btn) {
-  firstValue = currentValue;
+  if (currentValue) {
+    firstValue = currentValue;
+  }
+  if (firstValue === "") {
+    return;
+  }
   currentValue = "";
+  updateVisorValue();
 
   if (btn.id === "plus") operator = "+";
   if (btn.id === "minus") operator = "-";
   if (btn.id === "times") operator = "*";
   if (btn.id === "divide") operator = "/";
+  if (btn.id === "percent") operator = "%";
 }
 
 function calcResult() {
@@ -76,16 +91,14 @@ function calcResult() {
     result = parseFloat(firstValue) / parseFloat(secondValue);
   if (operator === "*")
     result = parseFloat(firstValue) * parseFloat(secondValue);
+  if (operator === "%")
+    result = (parseFloat(firstValue) / 100) * parseFloat(secondValue);
 
   if (result.toString().includes(".")) {
     currentValue = parseFloat(result.toFixed(5)).toString();
   } else {
     currentValue = result.toString();
   }
-
-  let historyExpression = `${firstValue.toString()} + ${secondValue.toString()} = ${currentValue.toString()}`;
-
-  history(historyExpression);
 
   firstValue = "";
   secondValue = "";
@@ -103,31 +116,20 @@ function clean() {
   operator = "";
   currentValue = "";
 
-  const visorValue = document.querySelectorAll(".visor__value");
-  visorValue.forEach((v) => (v.innerText = currentValue || "0"));
-
+  updateVisorValue();
   updateVisorOperator();
 }
 
 function backspace() {
   currentValue = currentValue.slice(0, -1);
 
-  const visorValue = document.querySelectorAll(".visor__value");
-  visorValue.forEach((v) => (v.innerText = currentValue || "0"));
+  updateVisorValue();
 }
 
-function history(expression) {
-  if (hist < 5) {
-    hist.unshift(expression);
-    return;
-  }
-  hist.pop();
-  hist.unshift(expression);
-}
+function pi() {
+  currentValue = "3.14";
 
-function populateHistory(hist) {
-  const historyLayout = document.querySelectorAll(".history");
-  historyLayout.forEach((e) => e.innerHTML);
+  updateVisorValue();
 }
 
 export default calc();

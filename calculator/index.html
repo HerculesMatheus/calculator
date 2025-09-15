@@ -55,7 +55,6 @@
         </button>
         <ul class="navbar__options--mobile">
           <li><button class="toggle-theme">Alterar Tema</button></li>
-          <li><button class="show-history--mobile">Histórico</button></li>
         </ul>
       </nav>
     </header>
@@ -72,30 +71,18 @@
           >
             AC
           </button>
-          <button
-            id="history"
-            class="calculator-button calculator__button--mobile"
-          >
+          <button id="pi" class="calculator-button calculator__button--mobile">
             <svg
-              width="30"
-              height="31"
-              viewBox="0 0 30 31"
+              width="32"
+              height="24"
+              viewBox="0 0 32 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M15.2308 28C22.0281 28 27.5385 22.4897 27.5385 15.6923C27.5385 8.89495 22.0281 3.38461 15.2308 3.38461C8.43341 3.38461 2.92307 8.89495 2.92307 15.6923C2.92307 22.4897 8.43341 28 15.2308 28Z"
+                d="M30.8027 1.96593C30.9271 1.96593 31.0045 2.10052 30.9424 2.20811C30.9135 2.25794 30.8604 2.28917 30.8027 2.28917H22.834V17.8077C22.8342 20.8125 26.0871 22.6907 28.6895 21.1886C29.8972 20.4913 30.6415 19.2023 30.6416 17.8077C30.6416 17.6835 30.7762 17.6051 30.8838 17.6671C30.9337 17.6959 30.9648 17.75 30.9648 17.8077C30.9646 21.0612 27.4417 23.0947 24.624 21.4679C23.3166 20.7129 22.5109 19.3175 22.5107 17.8077V2.28917H11.2197V21.8722C11.2197 21.9963 11.0851 22.0744 10.9775 22.0128C10.9276 21.984 10.8965 21.9299 10.8965 21.8722V2.28917H8.73535C4.97554 2.28901 1.92773 5.33709 1.92773 9.09679C1.92739 9.22066 1.79301 9.29812 1.68555 9.23643C1.63599 9.20782 1.60501 9.15488 1.60449 9.09776C1.60857 5.28395 4.60282 2.17038 8.36914 1.97569L8.73633 1.96593H30.8027Z"
                 stroke="#212121"
-                stroke-width="2.46154"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M15.2308 8.30768V15.6923L20.1539 18.1538"
-                stroke="#212121"
-                stroke-width="2.46154"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                stroke-width="2"
               />
             </svg>
           </button>
@@ -369,17 +356,12 @@
             </svg>
           </button>
         </div>
-        <div class="history calculator__history--mobile">
-          <button>Limpar Histórico</button>
-        </div>
       </section>
       <section class="calculator calculator--desktop">
         <aside class="sidebar sidebar--desktop">
           <h1 class="sidebar__title--desktop">Calculadora</h1>
-          <div class="history sidebar__history--desktop"></div>
           <ul class="sidebar__options--desktop">
             <li><button class="toggle-theme">Alterar Tema</button></li>
-            <li><button class="show-history--desktop">Histórico</button></li>
           </ul>
         </aside>
         <div class="calculator__body--desktop">
@@ -395,29 +377,20 @@
               AC
             </button>
             <button
-              id="history"
+              id="pi"
               class="calculator-button calculator__button--desktop"
             >
               <svg
-                width="30"
-                height="31"
-                viewBox="0 0 30 31"
+                width="32"
+                height="24"
+                viewBox="0 0 32 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M15.2308 28C22.0281 28 27.5385 22.4897 27.5385 15.6923C27.5385 8.89495 22.0281 3.38461 15.2308 3.38461C8.43341 3.38461 2.92307 8.89495 2.92307 15.6923C2.92307 22.4897 8.43341 28 15.2308 28Z"
+                  d="M30.8027 1.96593C30.9271 1.96593 31.0045 2.10052 30.9424 2.20811C30.9135 2.25794 30.8604 2.28917 30.8027 2.28917H22.834V17.8077C22.8342 20.8125 26.0871 22.6907 28.6895 21.1886C29.8972 20.4913 30.6415 19.2023 30.6416 17.8077C30.6416 17.6835 30.7762 17.6051 30.8838 17.6671C30.9337 17.6959 30.9648 17.75 30.9648 17.8077C30.9646 21.0612 27.4417 23.0947 24.624 21.4679C23.3166 20.7129 22.5109 19.3175 22.5107 17.8077V2.28917H11.2197V21.8722C11.2197 21.9963 11.0851 22.0744 10.9775 22.0128C10.9276 21.984 10.8965 21.9299 10.8965 21.8722V2.28917H8.73535C4.97554 2.28901 1.92773 5.33709 1.92773 9.09679C1.92739 9.22066 1.79301 9.29812 1.68555 9.23643C1.63599 9.20782 1.60501 9.15488 1.60449 9.09776C1.60857 5.28395 4.60282 2.17038 8.36914 1.97569L8.73633 1.96593H30.8027Z"
                   stroke="#212121"
-                  stroke-width="2.46154"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M15.2308 8.30768V15.6923L20.1539 18.1538"
-                  stroke="#212121"
-                  stroke-width="2.46154"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  stroke-width="2"
                 />
               </svg>
             </button>
