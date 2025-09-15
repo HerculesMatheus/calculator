@@ -48,7 +48,7 @@ function validateValue(btn) {
   const char = btn.value;
 
   if (!char) return;
-  if (char === "." && currentValue.includes(".")) return;
+  if (char === "," && currentValue.includes(",")) return;
   if (currentValue.length >= 17) return;
   currentValue += char;
 
@@ -83,19 +83,17 @@ function calcResult() {
 
   let result;
 
-  if (operator === "+")
-    result = parseFloat(firstValue) + parseFloat(secondValue);
-  if (operator === "-")
-    result = parseFloat(firstValue) - parseFloat(secondValue);
-  if (operator === "/")
-    result = parseFloat(firstValue) / parseFloat(secondValue);
-  if (operator === "*")
-    result = parseFloat(firstValue) * parseFloat(secondValue);
-  if (operator === "%")
-    result = (parseFloat(firstValue) / 100) * parseFloat(secondValue);
+  const num1 = parseFloat(firstValue.replace(",", "."));
+  const num2 = parseFloat(secondValue.replace(",", "."));
+
+  if (operator === "+") result = num1 + num2;
+  if (operator === "-") result = num1 - num2;
+  if (operator === "/") result = num1 / num2;
+  if (operator === "*") result = num1 * num2;
+  if (operator === "%") result = (num1 / 100) * num2;
 
   if (result.toString().includes(".")) {
-    currentValue = parseFloat(result.toFixed(5)).toString();
+    currentValue = parseFloat(result.toFixed(5)).toString().replace(".", ",");
   } else {
     currentValue = result.toString();
   }
@@ -127,7 +125,7 @@ function backspace() {
 }
 
 function pi() {
-  currentValue = "3.14";
+  currentValue = "3,14";
 
   updateVisorValue();
 }
