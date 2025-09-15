@@ -1,12 +1,18 @@
 function toggleMenu() {
   const element = document.querySelector(".navbar__options--mobile");
   const computedStyle = window.getComputedStyle(element);
-  const displayValue = computedStyle.display;
+  const opacityValue = computedStyle.opacity;
 
-  if (displayValue == "none") {
+  if (opacityValue == 0) {
     element.style.display = "flex";
+    setTimeout(() => {
+      element.style.opacity = 1;
+    }, 250);
   } else {
-    element.style.display = "none";
+    element.style.opacity = 0;
+    setTimeout(() => {
+      element.style.display = "none";
+    }, 250);
   }
 }
 

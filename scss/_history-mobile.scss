@@ -1,0 +1,55 @@
+@import "variables";
+
+.calculator__history--mobile {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: transparent;
+  flex-grow: 1;
+  width: 100%;
+  height: 70dvh;
+  position: absolute;
+  bottom: -500px;
+  color: var(--txt);
+
+  div {
+    padding: 15px;
+  }
+
+  button {
+    display: flex;
+    width: 150px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    border: none;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+
+    &:active {
+      background-color: var(--primary);
+    }
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    bottom: -1000px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    bottom: 0;
+  }
+  100% {
+    bottom: -1000px;
+  }
+}

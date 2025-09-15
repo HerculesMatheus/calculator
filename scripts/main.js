@@ -1,5 +1,6 @@
 import { applySavedTheme, toggleTheme } from "./toggleTheme.js";
 import toggleMenu from "./toggleMobileMenu.js";
+import toggleHistory from "./toggleHistoryMobile.js";
 import calc from "./calculator.js";
 
 applySavedTheme();
@@ -19,3 +20,9 @@ document
 document.addEventListener("DOMContentLoaded", () => {
   calc();
 });
+
+document
+  .querySelector(".show-history--mobile")
+  .addEventListener("click", () => {
+    toggleHistory();
+  });

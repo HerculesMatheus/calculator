@@ -66,31 +66,26 @@ function setOperator(btn) {
 function calcResult() {
   secondValue = currentValue;
 
+  let result;
+
   if (operator === "+")
-    currentValue = (
-      parseFloat(firstValue) + parseFloat(secondValue)
-    ).toString();
+    result = parseFloat(firstValue) + parseFloat(secondValue);
   if (operator === "-")
-    currentValue = (
-      parseFloat(firstValue) - parseFloat(secondValue)
-    ).toString();
+    result = parseFloat(firstValue) - parseFloat(secondValue);
   if (operator === "/")
-    currentValue = (
-      parseFloat(firstValue) / parseFloat(secondValue)
-    ).toString();
+    result = parseFloat(firstValue) / parseFloat(secondValue);
   if (operator === "*")
-    currentValue = (
-      parseFloat(firstValue) * parseFloat(secondValue)
-    ).toString();
+    result = parseFloat(firstValue) * parseFloat(secondValue);
 
-  let result =
-    firstValue.toString() +
-    operator +
-    secondValue.toString() +
-    " = " +
-    currentValue;
+  if (result.toString().includes(".")) {
+    currentValue = parseFloat(result.toFixed(5)).toString();
+  } else {
+    currentValue = result.toString();
+  }
 
-  hist.unshift(result);
+  let historyExpression = `${firstValue.toString()} + ${secondValue.toString()} = ${currentValue.toString()}`;
+
+  history(historyExpression);
 
   firstValue = "";
   secondValue = "";
@@ -119,6 +114,20 @@ function backspace() {
 
   const visorValue = document.querySelectorAll(".visor__value");
   visorValue.forEach((v) => (v.innerText = currentValue || "0"));
+}
+
+function history(expression) {
+  if (hist < 5) {
+    hist.unshift(expression);
+    return;
+  }
+  hist.pop();
+  hist.unshift(expression);
+}
+
+function populateHistory(hist) {
+  const historyLayout = document.querySelectorAll(".history");
+  historyLayout.forEach((e) => e.innerHTML);
 }
 
 export default calc();
